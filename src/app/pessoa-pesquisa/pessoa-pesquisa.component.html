@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="ui-g-12">
+
+    <div class="ui-g-12">
+      <h1>Pessoas</h1>
+    </div>
+
+    <div class="ui-g-12 ui-fluid">
+      <label>Nome</label>
+      <input pInputText type="text" />
+    </div>
+
+    <div class="ui-g-12">
+      <p-button label="Pesquisar"></p-button>
+    </div>
+
+    <div class="ui-g-12">
+      <p-table [value]="pessoas" [responsive]="true" [paginator]="true" [rows]="5">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nome</th>
+            <th>Cidade</th>
+            <th class="th-pequena">Estado</th>
+            <th>Status</th>
+            <th class="th-micro"></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-pessoa>
+          <tr>
+            <td>{{pessoa.nome}}</td>
+            <td>{{pessoa.cidade}}</td>
+            <td>{{pessoa.estado}}</td>
+            <td>
+              <span [style.color]="pessoa.ativo ? 'black':'#ccc'">
+                {{pessoa.ativo ? 'Ativo':'Inativo'}}
+              </span>
+            </td>
+            <td>
+              <p-button icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" class="btn"></p-button>
+              <p-button icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" styleClass="ui-button-danger"></p-button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+    <div class="ui-g-12">
+      <p-button label="Nova Pessoa"></p-button>
+    </div>
+
+  </div>
+</div>

@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #404C51;
+}
+
+label{
+    font-weight: bold;
+}
+
+@media(min-width: 1200px){
+    .container{
+        width: 1170px;
+        margin: 0 auto;
+    }
+}
+
+.col-valor{
+    width: 120px;
+    text-align: right;
+}
+
+.col-data{
+    width: 120px;
+    text-align: center;
+}
+
+/*My own css styles*/
+
+/*--------------------*\
+  ROTULO
+\*--------------------*/
+.rotulo{
+    font-weight: bold;
+}
+
+.rotulo-block{
+    display: block
+}
+
+/*--------------------*\
+  INPUT
+\*--------------------*/
+.input-data{
+    width: 95px;
+}
+
+/*--------------------*\
+  BUTTON
+\*--------------------*/
+.btn{
+    margin-right: 2px;
+} 
+
+/*--------------------*\
+  TABELA
+\*--------------------*/
+.th-micro{
+    width: 90px;
+}
+
+.th-pequena{
+    width: 120px;
+}
+
+.td-valor{
+    text-align: right;
+}
+
+.td-data{
+    text-align: center;
+}
+
+th{
+    background-color: #428bca;
+    color: white;
+}
+
+tr{
+    background-color: #edf0f3;
+}
