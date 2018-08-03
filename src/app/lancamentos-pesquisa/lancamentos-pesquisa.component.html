@@ -1,62 +1,62 @@
 <div class="container">
+  <div class="ui-g-12">
+
     <div class="ui-g-12">
-  
-      <div class="ui-g-12">
-        <h1>Lançamentos</h1>
-      </div>
-  
-      <div class="ui-g-12 ui-fluid">
-        <label>Descrição</label>
-        <input pInputText type="text" />
-      </div>
-  
-      <div class="ui-g-12">
-        <label class="rotulo rotulo-block">Vencimento</label>
-        <input pInputText type="text" class="input-data" />
-  
-        <label> até </label>
-        <input pInputText type="text" class="input-data" />
-      </div>
-  
-      <div class="ui-g-12">
-        <p-button type="submit" label="Pesquisar"></p-button>
-      </div>
-  
-      <div class="ui-g-12">
-        <p-table [value]="lancamentos" [paginator]="true" [rows]="2" [responsive]="true">
-          <ng-template pTemplate="header">
-            <tr>
-              <th>Pessoa</th>
-              <th>Descrição</th>
-              <th class=th-pequena>data de vencimento</th>
-              <th class=th-pequena>Data de pagamento</th>
-              <th class="th-pequena">Valor</th>
-              <th class="th-micro"></th>
-            </tr>
-          </ng-template>
-          <ng-template pTemplate="body" let-lancamento>
-            <tr>
-              <td>{{lancamento.pessoa}}</td>
-              <td>{{lancamento.descricao}}</td>
-              <td class="td-data">{{lancamento.dataVencimento}}</td>
-              <td class="td-data">{{lancamento.dataPagamento}}</td>
-              <td class="td-valor">
-                <span [style.color]="lancamento.tipo === 'DESPESA' ? 'red':'blue'">
-                  {{lancamento.valor}}
-                </span>
-              </td>
-              <td>
-                <p-button icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" class="bt"></p-button>
-                <p-button icon="pi pi-trash"  pTooltip="Excluir" tooltipPosition="top" styleClass="ui-button-danger"></p-button>
-              </td>
-            </tr>
-          </ng-template>
-        </p-table>
-      </div>
-  
-      <div class="ui-g-12">
-        <a pButton label="Novo lançamento"></a>
-      </div>
-  
+      <h1>Lançamentos</h1>
     </div>
+
+    <div class="ui-g-12 ui-fluid">
+      <label>Descrição</label>
+      <input pInputText type="text" />
+    </div>
+
+    <div class="ui-g-12">
+      <label class="rotulo rotulo-block">Vencimento</label>
+      <input pInputText type="text" class="input-data" />
+
+      <label> até </label>
+      <input pInputText type="text" class="input-data" />
+    </div>
+
+    <div class="ui-g-12">
+      <p-button type="submit" label="Pesquisar"></p-button>
+    </div>
+
+    <div class="ui-g-12">
+      <p-table [value]="lancamentos" [paginator]="true" [rows]="2" [responsive]="true">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Pessoa</th>
+            <th>Descrição</th>
+            <th class=th-pequena>data de vencimento</th>
+            <th class=th-pequena>Data de pagamento</th>
+            <th class="th-pequena">Valor</th>
+            <th class="th-micro"></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-lancamento>
+          <tr>
+            <td>{{lancamento.pessoa}}</td>
+            <td>{{lancamento.descricao}}</td>
+            <td class="td-data">{{lancamento.dataVencimento | date:'dd/MM/yyy'}}</td>
+            <td class="td-data">{{lancamento.dataPagamento | date: 'dd/MM/yyy'}}</td>
+            <td class="td-valor">
+              <span [style.color]="lancamento.tipo === 'DESPESA' ? 'red':'blue'">
+                {{lancamento.valor | currency: 'BRL': true: '1.2-2'}}
+              </span>
+            </td>
+            <td>
+              <p-button icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" class="bt"></p-button>
+              <p-button icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" styleClass="ui-button-danger"></p-button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+    <div class="ui-g-12">
+      <a pButton label="Novo lançamento"></a>
+    </div>
+
   </div>
+</div>
